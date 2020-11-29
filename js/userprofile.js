@@ -131,6 +131,8 @@ async function main() {
     .then((data) => {
       // Display user information
       document.getElementById("userInfo").innerHTML = JSON.stringify(data, null,'\t');
+	  var obj = JSON.parse(document.getElementById("userInfo").innerHTML);
+		document.getElementById("userInfo1").innerHTML = obj.email;
     });
   }}}
   main();
