@@ -133,7 +133,9 @@ async function main() {
       var str = JSON.stringify(data, null,'\t');
 	  
 	  var obj = JSON.parse(str);
-	  document.getElementById("userInfo").innerHTML = JSON.stringify(data, null,'\t');
+	  //document.getElementById("userInfo").innerHTML = JSON.stringify(data, null,'\t');
+	  var str1 = obj.email;
+	  str1 = str1.substr(0,str1.indexOf("@"));
 		document.getElementById("email_value").innerHTML = obj.email;
     });
   }}}
