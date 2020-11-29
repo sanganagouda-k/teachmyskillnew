@@ -6,7 +6,7 @@ var domain = "teachmyskill";
 var region = "us-east-1";
 var appClientId = "44rbi881d2ihanp2k5c5oru83a";
 var userPoolId = "us-east-1_5ZPg8yjS0";
-var redirectURI = "https://www.teachmyskill.com/courses.html";
+var redirectURI = "https://www.teachmyskill.com/index.html";
 
 //Convert Payload from Base64-URL to JSON
 const decodePayload = payload => {
