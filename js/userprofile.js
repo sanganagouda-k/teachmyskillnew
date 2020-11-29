@@ -130,7 +130,7 @@ async function main() {
     })
     .then((data) => {
       // Display user information
-      document.getElementById("userInfo").innerHTML = JSON.stringify(data, null,'\t');
+      document.getElementById("userInfo").innerHTML = JSON.email(data, null,'\t');
     });
   }}}
   main();
