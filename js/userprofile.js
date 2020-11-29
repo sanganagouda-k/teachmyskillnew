@@ -6,7 +6,7 @@ var domain = "teachmyskill";
 var region = "us-east-1";
 var appClientId = "44rbi881d2ihanp2k5c5oru83a";
 var userPoolId = "us-east-1_5ZPg8yjS0";
-var redirectURI = "https://www.teachmyskill.com/index.html";
+var redirectURI = "https://www.teachmyskill.com/app-directory-grid.html";
 
 //Convert Payload from Base64-URL to JSON
 const decodePayload = payload => {
@@ -132,7 +132,7 @@ async function main() {
       // Display user information
       document.getElementById("userInfo").innerHTML = JSON.stringify(data, null,'\t');
 	  var obj = JSON.parse(document.getElementById("userInfo").innerHTML);
-		document.getElementById("userInfo1").innerHTML = obj.email;
+		document.getElementById("email_value").innerHTML = obj.email;
     });
   }}}
   main();
