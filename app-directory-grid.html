@@ -637,12 +637,11 @@ WARNING: Respond.js doesn't work if you view the page via file:// -->
     <script src="js/vendor-charts-flot.min.js"></script>
     <script src="js/vendor-nestable.min.js"></script>
 <script src="js/amazon-cognito-auth.min.js"></script>
-	<!--<script src="https://sdk.amazonaws.com/js/aws-sdk-2.7.16.min.js"></script> 
-	<script src="js/amazon-cognito-identity.min.js"></script>   -->
+	
 	<script src="js/aws-sdk.js"></script>
 	<script src="js/aws-sdk.min.js"></script>
 	<script src="js/config.js"></script>
-	<script src="js/amazon-cognito-identity.min.js"></script>
+	
 	<script src="js/require.js"></script>
 	<script>
   require.config({
@@ -667,7 +666,7 @@ WARNING: Respond.js doesn't work if you view the page via file:// -->
 		UserPoolId : 'us-east-1_5ZPg8yjS0',
         ClientId : '44rbi881d2ihanp2k5c5oru83a'
     };
-    var cognito = require(['js/amazon-cognito-identity.min']);
+    var cognito = require(['js/aws-sdk.min']);
 
 
 
