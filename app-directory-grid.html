@@ -182,7 +182,7 @@ WARNING: Respond.js doesn't work if you view the page via file:// -->
                                         <img src="images/people/50/guy-6.jpg" alt="people" class="img-circle" width="30">
                                     </div>
                                     <div class="media-body">
-                                        <a href="#">Bill</a> posted <a href="#">a comment</a> on Adrian's recent <a href="#">post</a>.
+                                        <a href="#"><label id="email_value"></label></a> posted <a href="#">a comment</a> on Adrian's recent <a href="#">post</a>.
                                         <br/>
                                         <span class="text-caption text-muted">3 hrs ago</span>
                                     </div>
@@ -636,6 +636,41 @@ WARNING: Respond.js doesn't work if you view the page via file:// -->
     <script src="js/vendor-player.min.js"></script>
     <script src="js/vendor-charts-flot.min.js"></script>
     <script src="js/vendor-nestable.min.js"></script>
+	 <script>
+	var data = { 
+		UserPoolId : _config.cognito.userPoolId,
+        ClientId : _config.cognito.clientId
+    };
+    var userPool = new AmazonCognitoIdentity.CognitoUserPool(data);
+    var cognitoUser = userPool.getCurrentUser();
+	
+	window.onload = function(){
+    if (cognitoUser != null) {
+        cognitoUser.getSession(function(err, session) {
+            if (err) {
+                alert(err);
+                return;
+            }
+            console.log('session validity: ' + session.isValid());
+			//Set the profile info
+			cognitoUser.getUserAttributes(function(err, result) {
+				if (err) {
+					console.log(err);
+					return;
+				}
+				console.log(result);
+				document.getElementById("email_value").innerHTML = result[2].getValue();	
+			});			
+			
+        });
+    }
+}
+	function signOut(){
+	    if (cognitoUser != null) {
+          cognitoUser.signOut();	  
+        }
+	}
+    </script>
     <!-- <script src="js/vendor-angular.min.js"></script> -->
     <!-- Compressed Vendor Scripts Bundle
     Includes all of the 3rd party JavaScript libraries above.
@@ -647,6 +682,8 @@ WARNING: Respond.js doesn't work if you view the page via file:// -->
     Includes Custom Application JavaScript used for the current theme/module;
     Do not use it simultaneously with the standalone modules below. -->
     <script src="js/module-bundle-main.min.js"></script>
+	<script src="js/amazon-cognito-identity.min.js"></script>  
+	<script src="js/config.js"></script>
     <!-- Standalone Modules
     As a convenience, we provide the entire UI framework broke down in separate modules
     Some of the standalone modules may have not been used with the current theme/module
