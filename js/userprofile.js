@@ -133,7 +133,7 @@ async function main() {
       var str = JSON.stringify(data, null,'\t');
 	  
 	  var obj = JSON.parse(str);
-	  document.getElementById("userInfo").innerHTML = obj;
+	  document.getElementById("userInfo").innerHTML = JSON.stringify(data, null,'\t');
 		document.getElementById("email_value").innerHTML = obj.email;
     });
   }}}
