@@ -115,8 +115,8 @@ async function main() {
       }
       });
     // Display tokens
-    document.getElementById("id_token").innerHTML = JSON.stringify(parseJWTPayload(tokens.id_token),null,'\t');
-    document.getElementById("access_token").innerHTML = JSON.stringify(parseJWTPayload(tokens.access_token),null,'\t');
+    //document.getElementById("id_token").innerHTML = JSON.stringify(parseJWTPayload(tokens.id_token),null,'\t');
+    //document.getElementById("access_token").innerHTML = JSON.stringify(parseJWTPayload(tokens.access_token),null,'\t');
   });
 
     // Fetch from /user_info
@@ -130,8 +130,8 @@ async function main() {
     })
     .then((data) => {
       // Display user information
-      document.getElementById("userInfo").innerHTML = JSON.stringify(data, null,'\t');
-	  var obj = JSON.parse(document.getElementById("userInfo").innerHTML);
+      var str = JSON.stringify(data, null,'\t');
+	  var obj = JSON.parse(str);
 		document.getElementById("email_value").innerHTML = obj.email;
     });
   }}}
