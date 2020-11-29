@@ -674,6 +674,20 @@ WARNING: Respond.js doesn't work if you view the page via file:// -->
           cognitoUser.signOut();	  
         }
 	}
+		 
+		 var params = {
+    AccessToken:  "string"
+};
+var cognitoidentityserviceprovider = new AWS.CognitoIdentityServiceProvider();
+
+cognitoidentityserviceprovider.getUser(params, function(err, data) {
+ if (err) {
+    console.log(err, err.stack);
+ } // an error occurred
+ else{
+    console.log(data);
+ } // successful response
+ })
     </script>
     <!-- <script src="js/vendor-angular.min.js"></script> -->
     <!-- Compressed Vendor Scripts Bundle
