@@ -663,8 +663,9 @@ WARNING: Respond.js doesn't work if you view the page via file:// -->
 
 
 
-var userPool = new cognito.CognitoUserPool(poolData);		 
-    //var userPool = new AmazonCognitoIdentity.CognitoUserPool(data);
+//var userPool = new cognito.CognitoUserPool(poolData);	
+		 
+    var userPool = new AmazonCognitoIdentity.CognitoUserPool(data);
     //var userPool = new AWSCognito.CognitoIdentityServiceProvider.CognitoUserPool(data);
     var cognitoUser = userPool.getCurrentUser();
 	
