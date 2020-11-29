@@ -21,6 +21,7 @@
 
 <p>User Profile</p>
 <p style="white-space:pre-line;" id="userInfo"></p>
+<p style="white-space:pre-line;" id="userInfo1"></p>
 
   <a href="freecourse1.html">free course 1</a>
   <a href="paidcourse1.html">paid course 1</a>
@@ -31,6 +32,7 @@ src="https://kjur.github.io/jsrsasign/jsrsasign-latest-all-min.js">
 <script src="js/userprofile.js"></script>
 <script language="JavaScript" type="text/javascript">
 var obj = JSON.parse(document.getElementById("userInfo").innerHTML);
-document.getElementById("userInfo").innerHTML = obj.email;
+document.getElementById("userInfo1").innerHTML = obj.email;
+</script>
 </body>
 </html>
