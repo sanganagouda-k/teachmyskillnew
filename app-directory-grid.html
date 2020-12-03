@@ -47,10 +47,7 @@ WARNING: Respond.js doesn't work if you view the page via file:// -->
 <![endif]-->
 </head>
 <body>
-<div id="msg" style="font-size:largest;">
-<!-- you can set whatever style you want on this -->
-Loading, please wait...
-</div>
+
     <!-- Wrapper required for sidebar transitions -->
     <div id="body" class="st-container" style="display:none;">
         <!-- Fixed navbar -->
@@ -611,9 +608,12 @@ Loading, please wait...
     <!-- /st-container -->
     <!-- Inline Script for colors and config objects; used by various external scripts; -->
 	<script type="text/javascript">
+$('#st-container').css('opacity', 0);
+$(window).load(function() {
+  $('#st-container').css('opacity', 1);
+});
 $(document).ready(function() {
-    $('#body').show();
-    $('#msg').hide();
+  setTimeout('$("#st-container").css("opacity", 1)', 1000);
 });
 </script>
     <script>
