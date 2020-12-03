@@ -90,9 +90,9 @@ async function main() {
     // Verify state matches
     state = urlParams.get('state');
     if(sessionStorage.getItem("pkce_state") != state) {
-        alert("Invalid state");
+        alert("Invalid state"+sessionStorage.getItem("pkce_state"));
     } else {
-
+alert(sessionStorage.getItem("pkce_state"));
     // Fetch OAuth2 tokens from Cognito
     code_verifier = sessionStorage.getItem('code_verifier');
   await fetch("https://auth.teachmyskill.com/oauth2/token?grant_type=authorization_code&client_id="+appClientId+"&code_verifier="+code_verifier+"&redirect_uri="+redirectURI+"&code="+ code,{
