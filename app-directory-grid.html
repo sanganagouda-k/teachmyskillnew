@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html class="st-layout ls-top-navbar-large ls-bottom-footer show-sidebar sidebar-l1 sidebar-r3" lang="en">
 <head>
- 
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -49,7 +48,7 @@ WARNING: Respond.js doesn't work if you view the page via file:// -->
 <body>
 
     <!-- Wrapper required for sidebar transitions -->
-    <div id="body" class="st-container" style="display:none;">
+    <div class="st-container">
         <!-- Fixed navbar -->
         <div class="navbar navbar-size-large navbar-default navbar-fixed-top" role="navigation">
             <div class="container-fluid">
@@ -607,15 +606,6 @@ WARNING: Respond.js doesn't work if you view the page via file:// -->
     </div>
     <!-- /st-container -->
     <!-- Inline Script for colors and config objects; used by various external scripts; -->
-	<script type="text/javascript">
-$('#st-container').css('opacity', 0);
-$(window).load(function() {
-  $('#st-container').css('opacity', 1);
-});
-$(document).ready(function() {
-  setTimeout('$("#st-container").css("opacity", 1)', 1000);
-});
-</script>
     <script>
     var colors = {
         "danger-color": "#e74c3c",
