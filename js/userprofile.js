@@ -94,7 +94,7 @@ async function main() {
     } else {
 alert(sessionStorage.getItem("pkce_state"));
     // Fetch OAuth2 tokens from Cognito
-    code_verifier = sessionStorage.getItem('code_verifier');
+    /*code_verifier = sessionStorage.getItem('code_verifier');
   await fetch("https://auth.teachmyskill.com/oauth2/token?grant_type=authorization_code&client_id="+appClientId+"&code_verifier="+code_verifier+"&redirect_uri="+redirectURI+"&code="+ code,{
   method: 'post',
   headers: {
@@ -117,7 +117,7 @@ alert(sessionStorage.getItem("pkce_state"));
     // Display tokens
     //document.getElementById("id_token").innerHTML = JSON.stringify(parseJWTPayload(tokens.id_token),null,'\t');
     //document.getElementById("access_token").innerHTML = JSON.stringify(parseJWTPayload(tokens.access_token),null,'\t');
-  });
+  });*/
 
     // Fetch from /user_info
     await fetch("https://auth.teachmyskill.com/oauth2/userInfo",{
