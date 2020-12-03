@@ -135,6 +135,7 @@ async function main() {
 	  var obj = JSON.parse(str);
 	  //document.getElementById("userInfo").innerHTML = JSON.stringify(data, null,'\t');
 	  var str1 = obj.email;
+	  alert(str1);
 	  str1 = str1.substr(0,str1.indexOf("@"));
 		document.getElementById("email_value").innerHTML = str1;
     });
