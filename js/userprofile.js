@@ -84,7 +84,7 @@ async function main() {
     sessionStorage.setItem("code_challenge", code_challenge)
 
     // Redirtect user-agent to /authorize endpoint
-    location.href = "https://"+domain+".auth."+region+".amazoncognito.com/oauth2/authorize?response_type=code&state="+state+"&client_id="+appClientId+"&redirect_uri="+redirectURI+"&scope=openid&code_challenge_method=S256&code_challenge="+code_challenge;
+    location.href = "https://auth.teachmyskill.com/oauth2/authorize?response_type=code&state="+state+"&client_id="+appClientId+"&redirect_uri="+redirectURI+"&scope=openid&code_challenge_method=S256&code_challenge="+code_challenge;
   } else {
 
     // Verify state matches
@@ -95,7 +95,7 @@ async function main() {
 
     // Fetch OAuth2 tokens from Cognito
     code_verifier = sessionStorage.getItem('code_verifier');
-  await fetch("https://"+domain+".auth."+region+".amazoncognito.com/oauth2/token?grant_type=authorization_code&client_id="+appClientId+"&code_verifier="+code_verifier+"&redirect_uri="+redirectURI+"&code="+ code,{
+  await fetch("https://auth.teachmyskill.com/oauth2/token?grant_type=authorization_code&client_id="+appClientId+"&code_verifier="+code_verifier+"&redirect_uri="+redirectURI+"&code="+ code,{
   method: 'post',
   headers: {
     'Content-Type': 'application/x-www-form-urlencoded'
@@ -120,7 +120,7 @@ async function main() {
   });
 
     // Fetch from /user_info
-    await fetch("https://"+domain+".auth."+region+".amazoncognito.com/oauth2/userInfo",{
+    await fetch("https://auth.teachmyskill.com/oauth2/userInfo",{
       method: 'post',
       headers: {
         'authorization': 'Bearer ' + tokens.access_token
