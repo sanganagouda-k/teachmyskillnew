@@ -46,7 +46,9 @@ WARNING: Respond.js doesn't work if you view the page via file:// -->
 <![endif]-->
 </head>
 <body>
-
+<div id="loading">
+  <img id="loading-image" src="images/max-1mb.gif" alt="Loading..." />
+</div>
     <!-- Wrapper required for sidebar transitions -->
     <div class="st-container">
         <!-- Fixed navbar -->
@@ -244,5 +246,10 @@ src="https://kjur.github.io/jsrsasign/jsrsasign-latest-all-min.js">
         module-bundle-main.js already includes theme-core.js so this should be loaded
         ONLY when using the standalone modules; -->
     <!-- <script src="js/theme-core.min.js"></script> -->
+	<script>
+  $(window).load(function() {
+    $('#loading').hide();
+  });
+</script>
 </body>
 </html>
