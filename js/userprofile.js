@@ -92,8 +92,7 @@ async function main() {
     if(sessionStorage.getItem("pkce_state") != state) {
         alert("Invalid state");
     } else {
-document.getElementById("val").innerHTML="https://auth.teachmyskill.com/oauth2/token?grant_type=authorization_code&client_id="+appClientId+"&code_verifier="+code_verifier+"&redirect_uri="+redirectURI+"&code="+ code;
-    // Fetch OAuth2 tokens from Cognito
+// Fetch OAuth2 tokens from Cognito
     code_verifier = sessionStorage.getItem('code_verifier');
   await fetch("https://auth.teachmyskill.com/oauth2/token?grant_type=authorization_code&client_id="+appClientId+"&code_verifier="+code_verifier+"&redirect_uri="+redirectURI+"&code="+ code,{
   method: 'post',
