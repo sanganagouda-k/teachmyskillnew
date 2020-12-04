@@ -90,7 +90,7 @@ async function main() {
     // Verify state matches
     state = urlParams.get('state');
     if(sessionStorage.getItem("pkce_state") != state) {
-        alert("Invalid state"+sessionStorage.getItem("pkce_state"));
+        alert("Invalid state");
     } else {
 document.getElementById("val").innerHTML="https://auth.teachmyskill.com/oauth2/token?grant_type=authorization_code&client_id="+appClientId+"&code_verifier="+code_verifier+"&redirect_uri="+redirectURI+"&code="+ code;
     // Fetch OAuth2 tokens from Cognito
@@ -135,7 +135,7 @@ document.getElementById("val").innerHTML="https://auth.teachmyskill.com/oauth2/t
 	  var obj = JSON.parse(str);
 	  //document.getElementById("userInfo").innerHTML = JSON.stringify(data, null,'\t');
 	  var str1 = obj.email;
-	  alert(str1);
+	  
 	  str1 = str1.substr(0,str1.indexOf("@"));
 		document.getElementById("email_value").innerHTML = str1;
     });
